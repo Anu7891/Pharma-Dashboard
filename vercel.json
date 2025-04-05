@@ -1,0 +1,10 @@
+{
+  "env": {
+    "VERCEL": "true"
+  },
+  "build": {
+    "env": {
+      "VERCEL": "true"
+    }
+  }
+} 

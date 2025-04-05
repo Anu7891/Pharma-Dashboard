@@ -38,13 +38,13 @@ body {
 
 @font-face {
   font-family: "Roboto-Regular";
-  src: url('../app/fonts/Roboto-Regular.ttf');
+  src: url('./fonts/Roboto-Regular.ttf');
   font-display: swap;
 }
 
 @font-face {
   font-family: "Roboto-Bold";
-  src: url("../app/fonts/Roboto-Bold.ttf");
+  src: url('./fonts/Roboto-Bold.ttf');
   font-display: swap;
 }
 
