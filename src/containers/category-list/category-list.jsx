@@ -9,6 +9,7 @@ const SortButtons = dynamic(() => import('@/components/sort-buttons/sort-buttons
 const CategoryList = ({ categories: propCategories, onSelectCategory }) => {
   const [categories, setCategories] = useState([]);
   const [selectAll, setSelectAll] = useState(false);
+  const [imageErrors, setImageErrors] = useState({});
 
   // Update categories when prop changes
   useEffect(() => {
@@ -16,7 +17,8 @@ const CategoryList = ({ categories: propCategories, onSelectCategory }) => {
       // Transform prop data format to match component expectations
       const transformedCategories = propCategories.map(cat => ({
         id: cat.id,
-        image: '/images/placeholder.png',
+        // Don't set a default image, we'll handle missing images with fallbacks
+        image: cat.image || '',
         name: cat.name,
         childCategory: cat.childCount || 0,
         attributeGroup: true,
@@ -42,6 +44,31 @@ const CategoryList = ({ categories: propCategories, onSelectCategory }) => {
     if (onSelectCategory) {
       onSelectCategory(id);
     }
+  };
+
+  const handleImageError = (id) => {
+    setImageErrors(prev => ({...prev, [id]: true}));
+  };
+
+  // Function to render a fallback for missing images
+  const renderImageOrFallback = (category) => {
+    if (!category.image || imageErrors[category.id]) {
+      return (
+        <div className="w-full h-full bg-gradient-to-r from-blue-500 via-red-500 to-yellow-500 flex items-center justify-center">
+          <div className="text-xs text-white font-bold">{category.name.charAt(0).toUpperCase()}</div>
+        </div>
+      );
+    }
+    
+    return (
+      <CustomImage 
+        src={category.image} 
+        alt={category.name} 
+        width={48} 
+        height={48} 
+        onError={() => handleImageError(category.id)}
+      />
+    );
   };
 
   return (
@@ -73,25 +100,36 @@ const CategoryList = ({ categories: propCategories, onSelectCategory }) => {
                 <tr key={category.id} className={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{category.id}</td>
                   <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="w-12 h-12 relative">
-                      <div className="w-full h-full bg-gradient-to-r from-blue-500 via-red-500 to-yellow-500 flex items-center justify-center">
-                        {/* Replace with actual image */}
-                        <div className="text-xs text-white">IMG</div>
-                      </div>
+                    <div className="w-12 h-12 relative rounded overflow-hidden">
+                      {renderImageOrFallback(category)}
                     </div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium table_header roboto_regular text-center">{category.name}</td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm table_header roboto_regular text-center">{category.childCategory}</td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-center ">
                     <button type="button" aria-label="attribute-group" >
-                      <CustomImage src={EDIT_ICON} alt="Edit" title="Edit" width={20} height={20} />
+                      <CustomImage 
+                        src={EDIT_ICON} 
+                        alt="Edit" 
+                        title="Edit" 
+                        width={20} 
+                        height={20} 
+                        onError={() => {}} // Ignore errors for icons
+                      />
                     </button>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
                     <SortButtons />
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-center cursor-pointer flex justify-center">
-                    <CustomImage src={ACTIONS_ICON} alt="actions" title="actions" width={18} height={18}  />
+                    <CustomImage 
+                      src={ACTIONS_ICON} 
+                      alt="actions" 
+                      title="actions" 
+                      width={18} 
+                      height={18}
+                      onError={() => {}} // Ignore errors for icons
+                    />
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-center">
                     <input 

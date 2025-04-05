@@ -1,6 +1,7 @@
 import Image from "next/image";
+import { usePathname } from 'next/navigation';
 
- const CustomImage = ({ 
+const CustomImage = ({ 
   src, 
   alt, 
   width = "100%", 
@@ -13,9 +14,15 @@ import Image from "next/image";
   placeholder = "empty",
   ...props 
 }) => {
+  const pathname = usePathname();
+  // Add the basePath to the src if it's a relative path and doesn't already have the basePath
+  const adjustedSrc = src.startsWith('/') && !src.startsWith('/Pharma-Dashboard') 
+    ? `/Pharma-Dashboard${src}` 
+    : src;
+
   return (
     <Image 
-      src={src} 
+      src={adjustedSrc} 
       alt={alt} 
       width={width} 
       height={height}

@@ -4,8 +4,9 @@ const nextConfig = {
   basePath: '/Pharma-Dashboard',
   assetPrefix: '/Pharma-Dashboard/',
   images: { 
-    unoptimized: true 
-  },
+    unoptimized: true,
+    domains: ['localhost']
+  }
 };
 
 export default nextConfig;
