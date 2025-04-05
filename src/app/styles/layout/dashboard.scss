@@ -1,0 +1,43 @@
+.dashboard {
+  @apply flex min-h-screen bg-gray-50;
+
+  &-content {
+    @apply flex-1 ml-[210px];
+  }
+
+  &-main {
+    @apply min-h-screen;
+  }
+
+  &-header {
+    @apply flex justify-between items-center mb-6;
+
+    &-title {
+      @apply text-2xl font-bold text-gray-800;
+    }
+
+    &-actions {
+      @apply flex items-center gap-2;
+    }
+  }
+
+  &-card {
+    @apply bg-white rounded-lg shadow-sm overflow-hidden;
+  }
+
+  &-user-avatar {
+    @apply w-8 h-8 rounded-full flex items-center justify-center text-white font-medium;
+
+    &-orange {
+      @apply bg-orange-500;
+    }
+  }
+
+  &-icon-button {
+    @apply p-2 rounded-full text-gray-500 hover:bg-gray-100;
+  }
+
+  &-badge {
+    @apply absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 bg-red-500 text-white text-xs font-medium rounded-full h-4 w-4 flex items-center justify-center;
+  }
+} 

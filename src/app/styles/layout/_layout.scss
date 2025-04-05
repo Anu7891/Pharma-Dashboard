@@ -1,0 +1,26 @@
+.dashboard-layout {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  position: relative;
+}
+
+.dashboard-content {
+  margin-left: 260px; // Sidebar width
+  min-height: 100vh;
+  transition: all 0.3s ease;
+
+  &.sidebar-closed {
+    margin-left: 0;
+  }
+}
+
+.dashboard-main {
+  padding: 84px 1.5rem 1.5rem; // 84px = header height + padding
+  min-height: calc(100vh - 64px); // 64px = header height
+}
+
+@media (max-width: 768px) {
+  .dashboard-content {
+    margin-left: 0;
+  }
+} 

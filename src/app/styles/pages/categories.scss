@@ -1,0 +1,101 @@
+.category {
+  &-container {
+    @apply p-6;
+  }
+
+  &-header {
+    @apply flex justify-between items-center mb-4;
+
+    &-title {
+      @apply text-2xl font-semibold text-gray-800;
+    }
+
+    &-actions {
+      @apply flex items-center gap-2;
+    }
+  }
+
+  &-content {
+    @apply bg-white rounded-lg shadow;
+  }
+
+  &-tabs {
+    @apply flex border-b;
+
+    &-button {
+      @apply px-6 py-3 text-sm font-medium text-gray-500 hover:text-gray-700;
+
+      &.active {
+        @apply text-blue-600 border-b-2 border-blue-600;
+      }
+    }
+  }
+
+  &-search {
+    @apply flex-1 flex items-center justify-end pr-4;
+
+    &-input {
+      @apply relative w-64;
+    }
+  }
+
+  &-add-button {
+    @apply ml-4 flex items-center px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md;
+  }
+
+  &-table {
+    @apply min-w-full divide-y divide-gray-200;
+
+    &-head {
+      @apply bg-gray-50;
+    }
+
+    &-body {
+      @apply bg-white divide-y divide-gray-200;
+    }
+
+    &-row {
+      @apply hover:bg-gray-50;
+    }
+
+    &-cell {
+      @apply px-4 py-3 whitespace-nowrap text-sm;
+
+      &-id {
+        @apply font-medium text-gray-900;
+      }
+
+      &-name {
+        @apply font-medium text-gray-900;
+      }
+
+      &-actions {
+        @apply flex items-center space-x-2;
+      }
+    }
+  }
+
+  &-image {
+    @apply h-10 w-10;
+
+    &-grid {
+      @apply grid grid-cols-2 grid-rows-2 gap-0.5 w-9 h-9;
+    }
+  }
+
+  &-action-button {
+    @apply p-1 rounded-full hover:bg-gray-100;
+
+    &-icon {
+      @apply h-5 w-5 text-gray-400;
+    }
+  }
+
+  &-sort-buttons {
+    @apply flex space-x-1;
+  }
+
+  &-checkbox {
+    @apply h-4 w-4 text-blue-600 border-gray-300 rounded;
+  }
+} 

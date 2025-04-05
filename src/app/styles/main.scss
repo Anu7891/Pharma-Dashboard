@@ -1,0 +1,111 @@
+/* SCSS Variables */
+$primary-color: #3B82F6;
+$secondary-color: #1E40AF;
+$background-light: #ffffff;
+$background-dark: #0a0a0a;
+$text-light: #171717;
+$text-dark: #ededed;
+$font-primary: var(--font-geist-sans);
+$font-mono: var(--font-geist-mono);
+
+/* Base styles */
+// @import 'base/reset';
+// @import 'base/typography';
+
+/* Components */
+// @import 'components/buttons';
+// @import 'components/cards';
+@import 'components/tables';
+// @import 'components/forms';
+
+/* Layout */
+@import 'layout/header';
+// @import 'layout/sidebar';
+@import 'layout/dashboard';
+
+/* Pages */
+@import 'pages/dashboard';
+// @import 'pages/categories';
+
+/* Utilities */
+// @import 'utilities/animations';
+// @import 'utilities/helpers';
+
+/* Custom Styles */
+.category-icon {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2px;
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  
+  & > div {
+    border-radius: 2px;
+  }
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  
+  th, td {
+    padding: 0.75rem 1rem;
+    vertical-align: middle;
+  }
+  
+  thead th {
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #6b7280;
+    letter-spacing: 0.05em;
+    background-color: #f9fafb;
+  }
+  
+  tbody tr {
+    &:hover {
+      background-color: #f9fafb;
+    }
+    
+    td {
+      border-bottom: 1px solid #e5e7eb;
+    }
+  }
+}
+
+.action-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  color: #6b7280;
+  transition: all 0.2s;
+  
+  &:hover {
+    background-color: #f3f4f6;
+    color: #374151;
+  }
+}
+
+.tab-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #6b7280;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+  
+  &:hover {
+    color: #111827;
+  }
+  
+  &.active {
+    color: $primary-color;
+    border-bottom-color: $primary-color;
+  }
+} 

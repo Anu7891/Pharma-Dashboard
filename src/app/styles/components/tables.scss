@@ -1,0 +1,55 @@
+.table-container {
+  @apply overflow-x-auto bg-white rounded-lg shadow-sm;
+}
+
+.table {
+  @apply min-w-full divide-y divide-gray-200;
+
+  thead {
+    @apply bg-gray-50;
+
+    th {
+      @apply px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider;
+    }
+  }
+
+  tbody {
+    @apply bg-white divide-y divide-gray-200;
+
+    tr {
+      @apply hover:bg-gray-50;
+    }
+
+    td {
+      @apply px-6 py-4 whitespace-nowrap text-sm text-gray-900;
+    }
+  }
+}
+
+.table-action-btn {
+  @apply p-1 rounded-full hover:bg-gray-100 text-gray-400 hover:text-gray-500 focus:outline-none;
+}
+
+.table-checkbox {
+  @apply h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500;
+}
+
+.category-image {
+  @apply grid grid-cols-2 grid-rows-2 gap-0.5 w-9 h-9;
+
+  &-red {
+    @apply bg-red-500 rounded-sm;
+  }
+  
+  &-yellow {
+    @apply bg-yellow-500 rounded-sm;
+  }
+  
+  &-blue {
+    @apply bg-blue-500 rounded-sm;
+  }
+  
+  &-green {
+    @apply bg-green-500 rounded-sm;
+  }
+} 
