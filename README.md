@@ -46,3 +46,5 @@ To deploy your Next.js app on GitHub Pages, follow these steps:
 npm run export
 npm run deploy
 ```
+
+<!-- Cache reset: [current date] -->
