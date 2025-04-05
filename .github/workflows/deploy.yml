@@ -1,0 +1,41 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [development-pharma-dashboard]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Create .nojekyll file
+        run: touch out/.nojekyll
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: out
+          branch: gh-pages
+
+      - name: Add build output to git
+        run: git add out -f
+
+      - name: Commit build output
+        run: git commit -m "Add build output for GitHub Pages"
+
+      - name: Push build output
+        run: git push origin development-pharma-dashboard 
