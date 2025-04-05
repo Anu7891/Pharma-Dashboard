@@ -82,14 +82,15 @@ export default function CategoryPage() {
                 variant="primary"
                 icon={<IoMdAdd aria-hidden="true" />}
                 aria-label="Add new category"
+                type="button"
               >
                 Add Category
               </Button>
             </div>
           </div>
           
-          {/* Table would be uncommented and enhanced with accessibility features once needed */}
-          
+        
+          {/* Category List */}
           <div className="bg-white w-full overflow-hidden pt-3">
             {activeTab === 'active' ? (
                <CategoryList 
