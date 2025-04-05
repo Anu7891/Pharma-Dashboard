@@ -5,7 +5,7 @@ on:
     branches: [development-pharma-dashboard]
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -19,12 +19,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build and Deploy
-        run: |
-          git config --global user.name ${{ github.actor }}
-          git config --global user.email ${{ github.actor }}@users.noreply.github.com
-          npm run build
-          touch out/.nojekyll
-          npx gh-pages -d out -t -r https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: out
