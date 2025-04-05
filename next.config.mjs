@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/Pharma-Dashboard',
-  assetPrefix: '/Pharma-Dashboard/',
+  // Conditionally apply basePath and assetPrefix based on deployment environment
+  basePath: process.env.VERCEL ? '' : '/Pharma-Dashboard',
+  assetPrefix: process.env.VERCEL ? '' : '/Pharma-Dashboard/',
   images: { 
     unoptimized: true
   }

@@ -28,10 +28,16 @@ const CustomImage = ({
     );
   }
 
+  // Check if this is a Vercel deployment by checking URL
+  const isVercel = typeof window !== 'undefined' && 
+    !window.location.hostname.includes('github.io') && 
+    !window.location.hostname.includes('localhost');
+  
   // Add the basePath to the src if it's a relative path and doesn't already have the basePath
-  const adjustedSrc = src.startsWith('/') && !src.startsWith('/Pharma-Dashboard') 
-    ? `/Pharma-Dashboard${src}` 
-    : src;
+  let adjustedSrc = src;
+  if (src.startsWith('/') && !isVercel && !src.startsWith('/Pharma-Dashboard')) {
+    adjustedSrc = `/Pharma-Dashboard${src}`;
+  }
 
   return (
     <Image 

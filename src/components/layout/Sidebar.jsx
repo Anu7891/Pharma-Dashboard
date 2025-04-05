@@ -1,5 +1,5 @@
 'use client';
-import { APP_LOGO, CATEGORY_LOGO, CUSTOMER_LOGO, DATA_ANALYTICS_LOGO, DELIVERY_LOGO, DISCOUNT_LOGO, LANGUAGE_ICON, ORDER_LOGO, PAYMENT_LOGO, PRODUCTS_LOGO, PURCHASE_ORDER_LOGO, QUESTION_ANSWER_LOGO, REVIEW_LOGO, TAX_LOGO, VENDOR_LOGO } from '@/config/image-config';
+import { APP_LOGO, CATEGORY_LOGO, CUSTOMER_LOGO, ANALYTICS_LOGO, DELIVERY_LOGO, OFFER_LOGO, LANGUAGE_LOGO, ALL_ORDER_LOGO, PAYMENT_LOGO, PRODUCTS_LOGO, QA_LOGO, REVIEW_LOGO, TAXES_LOGO, VENDORS_LOGO } from '@/config/image-config';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -12,19 +12,19 @@ import {
 import CustomImage from '../custom-image/custom-image';
 
 const sidebarItems = [
-  { title: 'Analytics', href: '/analytics', imagePath: DATA_ANALYTICS_LOGO },
+  { title: 'Analytics', href: '/analytics', imagePath: ANALYTICS_LOGO },
   { title: 'Category', href: '/category', imagePath: CATEGORY_LOGO },
   { title: 'Product', href: '/product', imagePath: PRODUCTS_LOGO },
-  { title: 'Vendors', href: '/vendors', imagePath: VENDOR_LOGO },
-  { title: 'All Order', href: '/order', imagePath: PURCHASE_ORDER_LOGO },
+  { title: 'Vendors', href: '/vendors', imagePath: VENDORS_LOGO },
+  { title: 'All Order', href: '/order', imagePath: ALL_ORDER_LOGO },
   { title: 'Review', href: '/review', imagePath: REVIEW_LOGO },
   { title: 'Delivery Partner', href: '/delivery-partner', imagePath: DELIVERY_LOGO},
-  { title: 'Taxes', href: '/taxes', imagePath: TAX_LOGO },
-  { title: 'QA', href: '/qa', imagePath: QUESTION_ANSWER_LOGO},
+  { title: 'Taxes', href: '/taxes', imagePath: TAXES_LOGO },
+  { title: 'QA', href: '/qa', imagePath: QA_LOGO},
   { title: 'Payment Getway', href: '/payment', imagePath: PAYMENT_LOGO },
-  { title: 'Language', href: '/language', imagePath: LANGUAGE_ICON },
+  { title: 'Language', href: '/language', imagePath: LANGUAGE_LOGO },
   { title: 'Customer', href: '/customer', imagePath: CUSTOMER_LOGO },
-  { title: 'Offer', href: '/offer', imagePath: DISCOUNT_LOGO },
+  { title: 'Offer', href: '/offer', imagePath: OFFER_LOGO },
   
 ];
 
