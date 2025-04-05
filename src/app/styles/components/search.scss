@@ -1,0 +1,10 @@
+.search_icon {
+    top:10px;
+}
+
+.search_input {
+  &::placeholder {
+    color: #A5A5A5 !important;
+
+  }
+}

@@ -1,9 +1,10 @@
 'use client';
-import Sidebar from './Sidebar';
+
+import Sidebar from "./sidebar"
 
 export default function DashboardLayout({ children }) {
   return (
-    <div className="dashboard">
+    <div className=" min-h-screen dashboard-container">
       <Sidebar />
       <div className="dashboard-content">
         <main className="dashboard-main">

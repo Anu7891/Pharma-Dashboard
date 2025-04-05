@@ -17,14 +17,17 @@ $font-mono: var(--font-geist-mono);
 // @import 'components/cards';
 @import 'components/tables';
 // @import 'components/forms';
+@import 'components/search';
+@import 'components/tables.scss';
 
 /* Layout */
 @import 'layout/header';
 // @import 'layout/sidebar';
 @import 'layout/dashboard';
+@import 'layout/sidebar';
 
 /* Pages */
-@import 'pages/dashboard';
+// @import 'pages/dashboard';
 // @import 'pages/categories';
 
 /* Utilities */
