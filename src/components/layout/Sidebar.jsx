@@ -1,5 +1,4 @@
 'use client';
-import { APP_LOGO, CATEGORY_LOGO, CUSTOMER_LOGO, ANALYTICS_LOGO, DELIVERY_LOGO, OFFER_LOGO, LANGUAGE_LOGO, ALL_ORDER_LOGO, PAYMENT_LOGO, PRODUCTS_LOGO, QA_LOGO, REVIEW_LOGO, TAXES_LOGO, VENDORS_LOGO } from '@/config/image-config';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -10,6 +9,7 @@ import {
   MdLocalOffer, MdViewCarousel, MdManageAccounts, MdCancel, MdWeb
 } from 'react-icons/md';
 import CustomImage from '../custom-image/custom-image';
+import { ALL_ORDER_LOGO, ANALYTICS_LOGO, APP_LOGO, CATEGORY_LOGO, CUSTOMER_LOGO, DELIVERY_LOGO, LANGUAGE_LOGO, OFFER_LOGO, PAYMENT_LOGO, PRODUCTS_LOGO, QA_LOGO, REVIEW_LOGO, TAXES_LOGO, VENDORS_LOGO } from '@/config/image-config';
 
 const sidebarItems = [
   { title: 'Analytics', href: '/analytics', imagePath: ANALYTICS_LOGO },
@@ -19,7 +19,7 @@ const sidebarItems = [
   { title: 'All Order', href: '/order', imagePath: ALL_ORDER_LOGO },
   { title: 'Review', href: '/review', imagePath: REVIEW_LOGO },
   { title: 'Delivery Partner', href: '/delivery-partner', imagePath: DELIVERY_LOGO},
-  { title: 'Taxes', href: '/taxes', imagePath: TAXES_LOGO },
+  { title: 'Taxes', href: '/taxes', imagePath: TAXES_LOGO},
   { title: 'QA', href: '/qa', imagePath: QA_LOGO},
   { title: 'Payment Getway', href: '/payment', imagePath: PAYMENT_LOGO },
   { title: 'Language', href: '/language', imagePath: LANGUAGE_LOGO },

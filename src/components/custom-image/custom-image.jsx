@@ -28,10 +28,10 @@ const CustomImage = ({
     );
   }
 
-  // Check if this is a Vercel deployment by checking URL
-  const isVercel = typeof window !== 'undefined' && 
-    !window.location.hostname.includes('github.io') && 
-    !window.location.hostname.includes('localhost');
+  // Check if this is a Vercel deployment by checking URL or using process.env
+  const isVercel = typeof window !== 'undefined' 
+    ? (!window.location.hostname.includes('github.io') && !window.location.hostname.includes('localhost'))
+    : process.env.VERCEL;
   
   // Add the basePath to the src if it's a relative path and doesn't already have the basePath
   let adjustedSrc = src;
