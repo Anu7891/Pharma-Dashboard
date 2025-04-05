@@ -7,7 +7,7 @@ export default function DashboardLayout({ children }) {
     <div className=" min-h-screen dashboard-container">
       <Sidebar />
       <div className="dashboard-content">
-        <main className="dashboard-main p-6">
+        <main className="dashboard-main">
           {children}
         </main>
       </div>

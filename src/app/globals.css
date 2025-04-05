@@ -8,6 +8,12 @@
   --app-logo-color: #2E3A59;
   --theme-color: #313131;
   --active-bg-color: #434A5C;
+  --tabs-active-color: #303030;
+  --active-tab-border: #06AF11;
+  --active-tab-height: 3px;
+  --disabled-tab-color: #B8B8B8;
+  --search-bg-color: #F8F8F8;
+  --btn-primary-color: #1980E5;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -62,5 +68,28 @@ body {
   background-color: var(--active-bg-color) !important;
 }
 
+.tabs_active_color {
+  color: var(--tabs-active-color) !important;
+}
+
+.active_tab_border {
+  border-color: var(--active-tab-border) !important;
+}
+
+.disabled_tab_color {
+  color: var(--disabled-tab-color) !important;
+}
+
+.search_bg_color {
+  background-color: var(--search-bg-color) !important;
+}
+
+.btn_primary_color {
+  background-color: var(--btn-primary-color) !important;
+}
+
+.side-content-height {
+  height: calc(100vh - 100px);
+}
 
 

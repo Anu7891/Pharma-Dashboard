@@ -35,14 +35,21 @@ const Sidebar = () => {
     <div className="sidebar-container bg-white h-screen border-r border-gray-200 overflow-y-auto">
       <div className="py-4 px-6 border-b border-gray-200">
         <div className="flex items-center gap-4">
-          <CustomImage src={APP_LOGO} alt="App Logo" width={50} height={50} />
+          <CustomImage 
+          src={APP_LOGO} 
+          alt="App Logo" 
+          width={50} 
+          height={50}
+          priority={true}
+          unoptimized
+          />
           <h1 className="font-bold app_logo_color text-4xl">Pharma</h1>
         </div>
       </div>
       
       <nav className="mt-2">
         <ul className="space-y-1 px-5  py-2">
-          {sidebarItems.map((item) => {
+          {sidebarItems.map((item,index) => {
             const isActive = pathname === item.href || 
                            (item.href !== '/' && pathname.startsWith(item.href));
             return (
@@ -64,6 +71,7 @@ const Sidebar = () => {
                           width={20}
                           height={20}
                           className="object-contain transition-all duration-200"
+                          priority={[0,1,2,3,4,5,6,7,8,9,10]?.includes(index)}
                         />
                       </div>
                     ) : (
