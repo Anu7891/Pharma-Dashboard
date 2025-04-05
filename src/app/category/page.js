@@ -10,7 +10,9 @@ import { Button, Search, Tabs } from '@/components/custom';
 const CategoryList = dynamic(() => import('@/containers/category-list/category-list'));
 
 export default function CategoryPage() {
+  // State variables
   const [activeTab, setActiveTab] = useState('active');
+  // Categories data
   const [categories, setCategories] = useState([
     { id: 1, name: 'Dental', childCount: 5, selected: true },
     { id: 2, name: 'Pharma', childCount: 3, selected: false },
