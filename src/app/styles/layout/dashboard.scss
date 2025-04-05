@@ -1,43 +1,38 @@
+.dashboard-layout {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  position: relative;
+}
+
+.dashboard-content {
+  min-height: 100vh;
+  transition: all 0.3s ease;
+
+  &.sidebar-closed {
+    margin-left: 0;
+  }
+}
+
+.dashboard-main {
+  padding: 84px 1.5rem 1.5rem; // 84px = header height + padding
+  min-height: calc(100vh - 64px); // 64px = header height
+}
+
 .dashboard {
-  @apply flex min-h-screen bg-gray-50;
+  display: flex;
+}
 
-  &-content {
-    @apply flex-1 ml-[210px];
-  }
+.dashboard-container {
+  display: flex;
+}
 
-  &-main {
-    @apply min-h-screen;
-  }
+.dashboard-content {
+  flex:0 0 75%;
+  max-width: 75%;
+}
 
-  &-header {
-    @apply flex justify-between items-center mb-6;
-
-    &-title {
-      @apply text-2xl font-bold text-gray-800;
-    }
-
-    &-actions {
-      @apply flex items-center gap-2;
-    }
-  }
-
-  &-card {
-    @apply bg-white rounded-lg shadow-sm overflow-hidden;
-  }
-
-  &-user-avatar {
-    @apply w-8 h-8 rounded-full flex items-center justify-center text-white font-medium;
-
-    &-orange {
-      @apply bg-orange-500;
-    }
-  }
-
-  &-icon-button {
-    @apply p-2 rounded-full text-gray-500 hover:bg-gray-100;
-  }
-
-  &-badge {
-    @apply absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 bg-red-500 text-white text-xs font-medium rounded-full h-4 w-4 flex items-center justify-center;
+@media (max-width: 768px) {
+  .dashboard-content {
+    margin-left: 0;
   }
 } 

@@ -5,6 +5,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --app-logo-color: #2E3A59;
+  --theme-color: #313131;
+  --active-bg-color: #434A5C;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,3 +28,39 @@ body {
     text-wrap: balance;
   }
 }
+
+
+@font-face {
+  font-family: "Roboto-Regular";
+  src: url('../app/fonts/Roboto-Regular.ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto-Bold";
+  src: url("../app/fonts/Roboto-Bold.ttf");
+  font-display: swap;
+}
+
+.roboto_regular {
+  font-family: Roboto-Regular !important;
+}
+
+.roboto_bold {
+  font-family: Roboto-Bold !important;
+}
+
+.theme_color {
+  color: var(--theme-color) !important;
+}
+
+.app_logo_color {
+  color: var(--app-logo-color) !important;
+}
+
+.active_bg_color {
+  background-color: var(--active-bg-color) !important;
+}
+
+
+

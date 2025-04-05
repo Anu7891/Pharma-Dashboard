@@ -22,9 +22,10 @@ $font-mono: var(--font-geist-mono);
 @import 'layout/header';
 // @import 'layout/sidebar';
 @import 'layout/dashboard';
+@import 'layout/sidebar';
 
 /* Pages */
-@import 'pages/dashboard';
+// @import 'pages/dashboard';
 // @import 'pages/categories';
 
 /* Utilities */

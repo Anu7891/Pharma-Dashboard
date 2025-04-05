@@ -1,4 +1,5 @@
 import localFont from "next/font/local";
+import "./globals.css";
 import "./styles/main.scss";
 import DashboardLayout from "@/components/layout/DashboardLayout";
 
